@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+
+<!-- add icon link -->
+<link rel = "icon" href =
+"https://darpe.me/wp-content/uploads/2018/05/Untitled-1-2-300x300.jpg"
+        type = "image/x-icon">
+<style type="text/css">
+    h1 {
+        margin: 1em 0 0.5em 0;
+	font-weight: normal;
+	position: relative;
+	text-shadow: 0 -1px rgba(0,0,0,0.6);
+	font-size: 28px;
+	line-height: 40px;
+	background: #355681;
+	background: rgba(89, 216, 100, 0.8);
+	border: 1px solid #fff;
+	padding: 5px 15px;
+	color: white;
+	border-radius: 0 10px 0 10px;
+	box-shadow: inset 0 0 5px rgba(53,86,129, 0.5);
+	font-family: 'Muli', sans-serif;
+}
+
+    label {
+        color: white;
+        padding: 8px;
+        font-family: Arial;
+        text-shadow: 0 -2px rgba(0,0,0,0.6);
+    }
+
+
+    nav{
+        background: #00F260;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #67B05B, #73C067);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #67B05B, #73C067); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+    /* body {
+        background-image: repeating-linear-gradient(199deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 1px,transparent 1px, transparent 31px,rgba(0,0,0,0.03) 31px, rgba(0,0,0,0.03) 32px,transparent 32px, transparent 92px),repeating-linear-gradient(78deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 1px,transparent 1px, transparent 31px,rgba(0,0,0,0.03) 31px, rgba(0,0,0,0.03) 32px,transparent 32px, transparent 92px),repeating-linear-gradient(277deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 1px,transparent 1px, transparent 31px,rgba(0,0,0,0.03) 31px, rgba(0,0,0,0.03) 32px,transparent 32px, transparent 92px),repeating-linear-gradient(18deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 1px,transparent 1px, transparent 31px,rgba(0,0,0,0.03) 31px, rgba(0,0,0,0.03) 32px,transparent 32px, transparent 92px),repeating-linear-gradient(91deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 1px,transparent 1px, transparent 31px,rgba(0,0,0,0.03) 31px, rgba(0,0,0,0.03) 32px,transparent 32px, transparent 92px),repeating-linear-gradient(348deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 1px,transparent 1px, transparent 31px,rgba(0,0,0,0.03) 31px, rgba(0,0,0,0.03) 32px,transparent 32px, transparent 92px),repeating-linear-gradient(334deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 1px,transparent 1px, transparent 31px,rgba(0,0,0,0.03) 31px, rgba(0,0,0,0.03) 32px,transparent 32px, transparent 92px),repeating-linear-gradient(261deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 1px,transparent 1px, transparent 31px,rgba(0,0,0,0.03) 31px, rgba(0,0,0,0.03) 32px,transparent 32px, transparent 92px),repeating-linear-gradient(21deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 1px,transparent 1px, transparent 31px,rgba(0,0,0,0.03) 31px, rgba(0,0,0,0.03) 32px,transparent 32px, transparent 92px),linear-gradient(90deg, hsl(83,0%,100%),hsl(83,0%,100%));
+        background-image: url("https://www.usailighting.com/stuff/contentmgr/files/1/492deca0f86781aab4bdc728f412f868/slides/population_council.jpg");
+    } */
+    #button3 {
+        background: #DC2424;  /* fallback for old browsers */
+        text-shadow: 2px 2px 5px rgb(53, 224, 53);
+    }
+    #button4 {
+        background: #DC2424;
+        text-shadow: 2px 2px 5px rgb(53, 224, 53);
+    }
+    #dropdown1 {
+        background: #ff6e7f;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #bfe9ff, #ff6e7f);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #bfe9ff, #ff6e7f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+    #dropdown2 {
+        background: #ff6e7f;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #bfe9ff, #ff6e7f);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #bfe9ff, #ff6e7f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
+    body, html {
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+  background-image: blur(4px);
+}
+
+body {
+  /* The image used */
+  background-image: url("https://www.tpgarchitecture.com/archidata4/tpg/assets/prev/project_292/23907_1839CFD3-D5EF-5FF7-6C45643000C6BA09_lg.jpg");
+  background-image: blur(4px);
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  backdrop-filter: blur(5px);
+}
+
+</style>
+</head>
+
+<body>
+
+    <!---------------------------------------     Navigation Bar       -------------------------------------------->
+    <div>
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+
+            <!-- Upload Button -->
+            <form method="POST" class="post-form" enctype="multipart/form-data">
+                {{ form.as_p }}
+                <button onclick="onSubmitBtn()" type="submit" id="btn-hide" class="btn btn-danger">Upload</button>
+            </form>
+
+
+            {% if message %}
+                <script>alert("Your Dataset is empty ...!")</script>  
+            {% endif %}
+
+            <hr>
+            <label for="exampleFormControlTextarea3">Total Number of Rows : </label>
+            <input type="number" id="Text1" name="TextBox1" value="noOfRows">{{ entry }}</input>
+            <hr>
+            <label for="exampleFormControlTextarea4">Total Number of Outliers : </label>
+            <input type="number" id="Text2" name="TextBox2">
+        </nav>
+    </div>
+    </form>
+    <!------------------------------------       Navigation Bar End          --------------------------------------->
+    </br></br>
+
+    <!---------------------------------------        Dropdowns       -------------------------------------------------->
+    <form method="POST">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-3">
+                    <strong><label for="exampleFormControlTextarea1">Dependent Variable</label></strong></br>
+                    <select class="selectpicker" id="dropdown1" name="dropdown1" data-live-search="True">
+                        {% for entry in item %}
+                        <option name="dCol" value="{{ entry }}">{{ entry }}</option>
+                        {% endfor %}
+                    </select>
+                    </br></br>
+                    <textarea class="form-control" id="textarea1" rows="3"></textarea>
+
+                    {% if warning1 %}
+                    <script>alert("Please select dependent column...!")</script>  
+                    {% endif %}
+                </div>
+
+                <div class="col-md-3">
+                    <strong><label for="textarea2">Independent Variables</label></strong></br>
+                    <select class="selectpicker" id="dropdown2" name="dropdown2" multiple data-live-search="True">
+                        {% for entry in item %}
+                        <option name="iCol" value="{{ entry }}">{{ entry }}<hr></option>
+                        {% endfor %}
+                    </select>
+                    </br></br>
+                    <textarea class="form-control" id="textarea2" rows="3"></textarea>
+
+                    {% if warning2 %}
+                    <script>alert("Please select independent columns...!")</script>  
+                    {% endif %}
+                </div>
+
+                <div class="col-md-3">
+                    <strong><label>Select Outlier Range :</label></strong>
+                    <div class="form-check">
+                        <input type="checkbox" name="2std"  value="2 Standard Deviation" class="form-check-input" id="materialIndeterminate1" unchecked>
+                        <label class="form-check-label" for="materialIndeterminate2">2 Standard Deviation</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="checkbox" name="3std"  value="3 Standard Deviation" class="form-check-input" id="materialIndeterminate2" unchecked>
+                        <label class="form-check-label" for="materialIndeterminate2">3 Standard Deviation</label>
+                    </div>
+                    <input type="hidden" name='path' value={{ path }}></input>
+
+                    {% if warning4 %}
+                    <script>alert("You have not checked one of checkboxes, Please check either 2Std or 3Std ...!")</script>  
+                    {% endif %}
+
+                    {% if warning3 %}
+                    <script>alert("Your dataset has some missing or null values please fill or replace those...!")</script>  
+                    {% endif %}
+                </div>
+
+                <!----------------------------------------------     Buttons        ------------------------------------->
+                <div class="col-md-3">
+                    <button type="submit" id="button3" class="btn btn-primary">Detect Outliers</button>
+                    </br></br>
+                    <a href="/static/Final_Outliers.csv"  id="button4" class="btn btn-primary" >Export to CSV</a>
+                    </br></br>
+                    <a href=" " class="btn btn-danger">Reset</a>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+
+    <!---------------------------------------------------         Dropdowns End    ----------------------------------------------------->
+    </br></br>
+
+
+    <h1>Your uploaded data will display here ...</h1>
+    <!------------------------------------------------            HTML TABLE         --------------------------------------------------->
+    <div class="table-responsive">
+        <!--  Html Table -->
+        <table class="table table-striped table-bordered table-hover table-dark">
+            <tr>
+                {% for value in DataFrame %}
+                <th>{{ value }}</th>
+                {% endfor %}
+
+                {% for _,row in DataFrame.iterrows %}
+            <tr>
+                {% for value in row %}
+                <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+            </tr>
+        </table>
+    </div>
+    </div>
+
+    <!---------------------------------------------------  Javascript event handlers  ---------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+
+
+    <script>
+        var $dropdown1;
+        var $dropdown2;
+        $(document).ready(function () {
+
+            $('select').selectpicker();
+            $dropdown1 = $("select[name='dropdown1']");
+            $dropdown2 = $("select[name='dropdown2']");
+            $dropdown1.on("change", function () {
+
+                $dropdown2.find("option").remove();
+                $dropdown2.append($dropdown1.find('option').clone());
+                var selectedItem = $(this).val();
+                if (selectedItem) {
+                    $dropdown2.find('option[value="' + selectedItem + '"]').remove();
+                }
+                $dropdown2.selectpicker('refresh');
+
+            });
+
+
+        });
+
+    </script>
+
+
+  <!--multiple select dropdown-->
+  <script type="text/javascript">
+    var mytextbox2 = document.getElementById('textarea2');
+    var mydropdown2 = document.getElementById('dropdown2');
+    var div1 = document.getElementsByClassName('filter-option-inner-inner');
+
+    mydropdown2.onchange = function () {
+        setTimeout(function(){
+            console.log("onchange")
+        console.log(document.getElementsByClassName('filter-option-inner-inner')[1].innerText)
+        mytextbox2.value = document.getElementsByClassName('filter-option-inner-inner')[1].innerText;
+             }, 100);
+    }
+</script>
+
+<!--single select dropdown-->
+<script type="text/javascript">
+    var mytextbox1 = document.getElementById('textarea1');
+    var mydropdown1 = document.getElementById('dropdown1');
+
+    mydropdown1.onchange = function () {
+        mytextbox1.value = "";
+        mytextbox1.value = mytextbox1.value + this.value; //to appened
+        // mytextbox1.innerHTML = this.value;
+    }
+</script>
+
+</body>
+
+</html>
